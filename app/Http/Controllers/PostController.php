@@ -20,7 +20,7 @@ class PostController extends Controller
             $post->body = $request->body;
 
             if ($post->save()) {
-                return response()->json(['status' => 'success', 'message' => 'Post created successfully']);
+                return response()->json(['status' => 'success', 'message' => 'Post criado com sucesso']);
             }
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
@@ -35,7 +35,7 @@ class PostController extends Controller
             $post->body = $request->body;
 
             if ($post->save()) {
-                return response()->json(['status' => 'success', 'message' => 'Post updated successfully']);
+                return response()->json(['status' => 'success', 'message' => 'Post editado com sucesso!']);
             }
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
@@ -48,7 +48,7 @@ class PostController extends Controller
             $post = Post::findOrFail($id);
 
             if ($post->delete()) {
-                return response()->json(['status' => 'success', 'message' => 'Post deleted successfully']);
+                return response()->json(['status' => 'success', 'message' => 'Post deletado com sucesso!']);
             }
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
